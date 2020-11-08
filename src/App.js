@@ -1,40 +1,42 @@
 import './App.css';
+// eslint-disable-next-line
 import Header from './components/Header/Header'
+import StockList from './components/StockList/StockList'
+import {  useSelector, useDispatch } from 'react-redux'
+import React, { useEffect,  useCallback } from 'react';
 
 function App() {
-  var dados = [
-    {
-      nome: 'WING20',
-      valor: 114093.33, 
-      tradesNoDia: 10,
-    },
-    {
-      nome: 'BIDI4',
-      valor: 20.11, 
-      tradesNoDia: 5,
-    },
-    {
-      nome: 'ABEV3',
-      valor: 13.12, 
-      tradesNoDia: 4,
-    },
-    {
-      nome: 'WEGE3',
-      valor: 60.25, 
-      tradesNoDia: 310,
-    },
 
-  ]
+  //pra poder acessar o estado do redux
+  const reduxState = useSelector(data => data)
   
-  var elementos = dados.map(dado => {
-    return (
-      <Header ravizinho={dado.nome} trades={dado.tradesNoDia}/>
-    )
-  })
+  //pra poder usar as ações do redux
+  const dispatch = useDispatch()
+
+
+  //toda função que entra no useEffect recebe useCallback e entra no array do useEffect
+  const getStocksHandler = useCallback(() => {
+    dispatch({
+      type: 'stocks/GETSTOCKS'
+    })
+  }, [dispatch]);
+
+  //onload do react
+  useEffect(() => {
+    getStocksHandler()
+  }, [getStocksHandler])
+
+  //funçãozinha de buenas, relevante só pro componente
+  function listStocksHandler () {
+    console.log('reduxState', reduxState)
+  }
 
   return (
     <div className="App">
-     {elementos}
+      <StockList/>
+      <Header/>
+      <button onClick={() => listStocksHandler()}>Listar ações</button>
+     {/* {elementos} */}
     </div>
   );
 }
