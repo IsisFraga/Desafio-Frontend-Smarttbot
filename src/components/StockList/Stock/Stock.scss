@@ -1,0 +1,80 @@
+@import '../../../styles/global';
+
+$margin: 4px;
+$halfMargin: 2px;
+//font-family: "Roboto", sans-serif;
+
+.Stock {
+  display: flex;
+  margin: $margin;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 0px;
+  box-shadow: 3px 3px 2px 1px #b5b4b6;
+  @include desktop {
+    padding: 20px;
+    width: calc(50% - 40px);
+  }
+  @include mobile {
+    padding: 10px;
+    width: 100%;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 38%;
+    min-width: 200px;
+    &--title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-width: 220px;
+      flex-grow: 1;
+      letter-spacing: 0.5px;
+      h2 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 13px;
+        color: $description_text;
+        width: 100%;
+        text-align: left;
+      }
+    }
+    &--status {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      min-width: 100px;
+      align-items: center;
+      margin: 3px 0;
+      .status-text {
+        color: $description_text;
+        font-size: 13px;
+      }
+      .status-ball {
+        min-width: 10px;
+        max-width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        margin-right: 10px;
+        &.on {
+          background-color: $app_on;
+          
+        }
+        &.off {
+          background-color: red;
+        }
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 62%;
+    min-width: 400px;
+  }
+}

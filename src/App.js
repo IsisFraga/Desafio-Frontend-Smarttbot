@@ -1,9 +1,12 @@
-import './App.css';
+import './App.scss';
+
+import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+
 // eslint-disable-next-line
 import Header from './components/Header/Header'
+import Sidebar from './components/Sidebar/Sidebar'
 import StockList from './components/StockList/StockList'
-import {  useSelector, useDispatch } from 'react-redux'
-import React, { useEffect,  useCallback } from 'react';
 
 function App() {
 
@@ -33,8 +36,14 @@ function App() {
 
   return (
     <div className="App">
-      <StockList/>
+      <div className="sidearea">
+      <Sidebar/>
+      </div>
+      <div className="contentArea">
       <Header/>
+      <StockList/>
+      </div>
+
       <button onClick={() => listStocksHandler()}>Listar ações</button>
      {/* {elementos} */}
     </div>

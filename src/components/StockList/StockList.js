@@ -12,28 +12,25 @@ function StockList(props) {
     setListOfStocks(reduxState.stocks.stockList)
   }, [reduxState]);
 
-  function acao () {
-    console.log('listOfStocks',listOfStocks)
-    console.log('reduxState',reduxState)
-  }
-
+  const element = []
   // quantos cards vier
-  let element = listOfStocks.map(stock => {
-    return (
+  listOfStocks.forEach((stock, index) => {
+    let info =  (
         <Stock 
         key={stock.id} 
         name={stock.stock_codes}
         dailybalance={stock.daily_balance}
         title={stock.title}
         lastPaper={stock.last_paper}
+        status={stock.running}
+        lastUpdate={stock.updated_at}
         />
     )
+    if (index < 4) { element.push(info) }
   })
 
   return (
     <div className="StockList">
-        <Stock />
-        <button onClick={() => acao()}>Ver stocks</button>
         <div className="StockList container">
             {element}
         </div>
