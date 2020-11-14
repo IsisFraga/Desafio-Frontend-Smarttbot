@@ -5,6 +5,9 @@
   display: flex;
   @include desktop {
     flex-direction: row;
+    .sidearea {
+      width: 150px;
+    }
   }
   @include mobile {
     flex-direction: column;

@@ -1,5 +1,6 @@
+import StockData from '../../services/StockData'
+
 // Action Types
-import FakeApi from '../../services/StockData/FakeApi'
 
 export const Types = {
     GETSTOCKS: 'stocks/GETSTOCKS',
@@ -18,9 +19,7 @@ export const Types = {
   export function stocks(state = initialState, action) {
     switch (action.type) {
       case Types.GETSTOCKS:
-        const payload = getStocks()
-        console.log('payload', payload)
-        return {...initialState, loading: true, stockList: payload.listOfStocks};
+        return {...initialState, stockList: action.listOfStocks};
       case Types.FINISHGETTINGSTOCKS:
         return {...initialState, loading: false};
       case Types.STARTLOADING:
@@ -33,10 +32,17 @@ export const Types = {
   }
 
   // Action Creators
-  
-  export function getStocks() {
-    return {
-        listOfStocks: FakeApi,
+  export const startLoading = () => ({ type: 'stocks/STARTLOADING' });
+  export const goGetStocks = (list) => ({ type: 'stocks/GETSTOCKS', 
+listOfStocks: list.data.data });
+
+  export const getStocks = () => async (dispatch) => {
+    dispatch(startLoading())
+    try {
+      const data = await StockData.getRobotList()
+      return dispatch(goGetStocks(data))
+    } catch (e) {
+      console.log('Error:', e)
     }
   }
   

@@ -3,6 +3,7 @@ import './Sidebar.scss';
 import React, { useEffect, useState } from 'react';
 
 import StockData from '../../services/StockData'
+import logo from '../../assets/logoSmarttbot.png'
 
 function Sidebar(props) {
   // tudo que seu componente vai apresentar de informação
@@ -21,7 +22,7 @@ function Sidebar(props) {
 
   return (
     <div className="Sidebar">
-      Análise Geral {props.ravizinho} {props.trades}
+      <img src={logo} alt="" />
     </div>
   );
 }
