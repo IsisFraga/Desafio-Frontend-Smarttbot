@@ -17,9 +17,15 @@ function StockData () {
         const data = api.get(endpoint);
         return Promise.resolve(data)
     }
+    async function getRobotOverview() {
+        const endpoint = 'https://api-front-test.k8s.smarttbot.com/api/v1/robot/overview'
+        const data = api.get(endpoint);
+        return Promise.resolve(data)
+    }
 
     return {
         getRobotList,
+        getRobotOverview
         
     }
 }

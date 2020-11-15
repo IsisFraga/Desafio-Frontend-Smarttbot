@@ -1,0 +1,83 @@
+@import '../../styles/global.scss';
+
+.newRobot {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 0px;
+    box-shadow: 3px 3px 2px 1px #e8e3ee;
+    justify-content: space-between;
+
+    @include desktop {
+        padding: 25px;
+        width: calc(100% - 54px);
+        margin: 10px 27px;
+    }
+    @include mobile {
+        padding: 20px;
+        width: 100%;
+        margin: 20px 10px 0 10px;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 75px;
+            border: 1px solid $gray3;
+            border-radius: 5px;
+            padding: 22px 15px;
+            cursor: pointer;
+            transition: 0.4s;
+    
+            &:hover {
+                box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+                transition: 0.4s;
+            }
+        }
+
+        .mainText {
+            padding-left: 30px;
+            flex-direction: column;
+            text-align: left;
+            color: $gray_light;
+            font-size: 13px;
+            font-weight: 400;
+            
+            h3 {
+                font-size: 17px;
+                font-weight: 700;
+                color: $gray_dark;
+            }
+
+            span {
+                color: $app_on;
+                font-weight: 700;
+                padding: 10px 3px;
+            }
+        }
+
+    }
+    &__right {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 400;
+
+        &--pro {
+            color: $description_text;
+            
+            span {
+                padding: 0 5px;
+            }
+        }
+        &--upgrade {
+            color: $app_on;
+        }
+    }
+}

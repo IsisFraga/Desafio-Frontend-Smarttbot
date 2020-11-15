@@ -1,25 +1,39 @@
 import './Header.scss';
-import StockData from '../../services/StockData'
-import React, { useEffect, useState } from 'react';
+import symbol from '../../assets/signal.png';
+import ToggleButton from 'react-toggle-button'
 
 function Header(props) {
-  // tudo que seu componente vai apresentar de informação
-  // que não é fixa, ou seja que pode vir de api
-  const [dog, setDog] = useState();
-
-  // tudo que seu componente executa de função só uma vez. ou seja, no inicio dele
-  // no inicio
-  useEffect(() => {
-    teste()
-  }, []);
-
-  // função que ele precisa
-  async function teste() {
-  }
 
   return (
-    <div className="Header">
-      Análise Geral {props.ravizinho} {props.trades}
+    <div className="header">
+      <div className="header__left"> 
+        <img src={symbol} alt="barras verdes"/>
+        <div className="header__left--bar"></div>
+        <h3>
+        Análise Geral 
+        </h3>
+        <p className="header__left--divide">
+        /
+        </p>
+        <h4>
+          Principal
+        </h4>
+      </div>
+      <div className="header__right">
+        <p className={`header__right--simulated ${props.self ? 'on' : 'off'}`}>
+          Modo Simulado
+        </p>
+        <div className="header__right--toggle">
+          <ToggleButton
+          value={ props.self || false }
+          onToggle={() => {
+          props.changeSelf()
+          }} />
+        </div>
+        <p className={`header__right--real ${props.self ? 'off' : 'on'}`}>
+          Modo Real
+        </p>
+      </div> 
     </div>
   );
 }

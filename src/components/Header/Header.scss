@@ -1,0 +1,101 @@
+@import '../../styles/global.scss';
+
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 0px;
+    box-shadow: 3px 3px 2px 1px #e8e3ee;
+    justify-content: space-between;
+
+    @include desktop {
+        padding: 25px;
+        width: calc(100% - 54px);
+        margin: 10px 27px 20px;
+    }
+    @include mobile {
+        padding: 25px;
+        width: 100%;
+        margin: 10px;
+    }
+
+    &__left {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+
+        img {
+            height: 15px;
+            margin-left: 5px;
+        }
+
+        &--bar {
+            border-right: 2px solid $gray3;
+            padding-left: 20px;
+            height: 30px;
+        }
+
+        h3 {
+            padding-left: 20px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: $gray_dark;
+        }
+
+        &--divide{
+            padding: 0 5px;
+            color: $gray3;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: $app_on;
+        }
+    }
+
+    &__right {
+        display: flex;
+        min-width: 250px;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 14px;
+        font-weight: 500;
+
+        .on {
+            color: $gray_light;
+        }
+
+        .off {
+            color: $gray_dark;
+            font-weight: 700;
+        }
+
+        &--toggle{
+            *{
+                font-size: 0 !important;
+            }
+            >div {
+                >div:first-child {
+                    height: 24px !important;
+                    max-width: 70px !important;
+                    background-image: url('../../assets/toggle\ button.png');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                >div:nth-child(2) {
+                  >div {
+                      width: 16px !important;
+                      height: 16px !important;
+                      position: relative !important;
+                      margin-left: 1px;
+                  }
+                }
+            }
+        }
+    }
+}
