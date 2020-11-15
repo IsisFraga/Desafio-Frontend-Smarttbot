@@ -2,37 +2,6 @@
 
 $halfMargin: 2px;
 
-@mixin result() {
-  &.positive {
-    color:$app_on;
-    &::before {
-      content:'';
-      position: relative;
-      top: -12px;
-      left: -3px;
-      width: 0; 
-      height: 0; 
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-bottom: 5px solid $app_on;
-    }
-  }
-  &.negative {
-    color:$negativeColor;
-    &::before {
-      content:'';
-      position: relative;
-      top: 13px;
-      left: -3px;
-      width: 0; 
-      height: 0; 
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 5px solid $negativeColor;
-    }
-  }
-}
-
 
 .Stock {
   display: flex;
@@ -41,9 +10,11 @@ $halfMargin: 2px;
   border-radius: 6px;
   border: 0px;
   box-shadow: 3px 3px 2px 1px #e8e3ee;
+  justify-content: space-between;
+
   @include desktop {
     padding: 25px;
-    width: calc(50% - 40px);
+    width: calc(50% - 10px);
   }
   @include mobile {
     padding: 15px;
@@ -54,7 +25,7 @@ $halfMargin: 2px;
     display: flex;
     flex-direction: column;
     width: 35%;
-    min-width: 210px;
+    min-width: 255px;
     
     &--title-status {
       display: flex;
@@ -219,8 +190,46 @@ $halfMargin: 2px;
   &__right {
     display: flex;
     flex-direction: column;
-    width: 62%;
-    min-width: 400px;
+    min-width: 380px;
+    justify-content: space-between;
+    max-width: 380px;
+
+    &--header {
+      display: flex;
+      padding-left: 35px;
+      justify-content: space-between;
+      text-align: left;
+      margin-bottom: 10px;
+
+      h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $gray_dark;
+      }
+      p {
+        margin: 1px;
+        font-size: 12px;
+        font-weight: 300;
+        color: $gray_medium;
+      }
+    }
+
+    &--main {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      img {
+        width: 380px;
+      }
+    }
+    .pause,
+    .more {
+      height: 18px;
+      margin: 5px 10px;
+      cursor: pointer;
+    }
   }
 
   

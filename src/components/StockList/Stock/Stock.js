@@ -1,5 +1,8 @@
 import './Stock.scss';
 import seta from '../../../assets/arrow.svg'
+import more from '../../../assets/more.svg'
+import pause from '../../../assets/pause.svg'
+import chart from '../../../assets/grafico.png'
 
 function Stock(props) {
   function returnValue (value) {
@@ -86,6 +89,22 @@ function Stock(props) {
         </div>
       </div>
       <div className="Stock__right">
+        <div className="Stock__right--header">
+          <div className="head-left"> 
+            <h2>
+              Histórico do dia
+            </h2>
+            <p>
+              última atualização • (mock)
+            </p>
+          </div>
+          <div className="head-right"> 
+          <img className="pause" src={pause}/><img className="more" src={more}/>
+          </div>
+        </div>
+        <div className="Stock__right--main">
+          <img src={chart}/>
+        </div>
       </div>
     </div>
   );
