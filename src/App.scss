@@ -1,11 +1,19 @@
+@import './src/styles/global';
+
 .App {
   text-align: center;
+  display: flex;
+  @include desktop {
+    flex-direction: row;
+    .sidearea {
+      width: 150px;
+    }
+  }
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
