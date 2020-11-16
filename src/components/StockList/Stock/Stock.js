@@ -70,7 +70,7 @@ function Stock(props) {
         <div className="Stock__left--bottom">
           <div className="left">
             <p>
-              Saldo diário <img className="arrow" src={seta}/>
+              Saldo diário <img className="arrow" src={seta} alt="seta"/>
             </p>
             <h3 className={props.dailybalance > -0.0000001 ? 'positive' : 'negative'}>
               {props.dailybalance > 0 ? '' : '-'}
@@ -99,11 +99,11 @@ function Stock(props) {
             </p>
           </div>
           <div className="head-right"> 
-          <img className="pause" src={pause}/><img className="more" src={more}/>
+          <img className="pause" alt="pause" src={pause}/><img className="more" alt="mais" src={more}/>
           </div>
         </div>
         <div className="Stock__right--main">
-          <img src={chart}/>
+          <img alt="grafico" src={chart}/>
         </div>
       </div>
     </div>
