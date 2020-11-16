@@ -1,4 +1,21 @@
 # Desafio Frontend Smarttbot
+
+Meu maior desafio e dificuldade deste teste foi aprender React com Hooks e Redux em pouco tempo.
+Usei uma arquitetura padrão bem comum que consegui em materiais educativos, uma estrutura de projeto com Ducks mas sem Thunk.
+Não foi fácil compatibilizar o que achei na internet com a implementação do middleware, já que não encontrei nenhum exemplo com a estrutura que eu precisava.
+
+O botão de adicionar robôs funciona para renderizar outro que já está no estado da aplicação.
+Criei um estado de loading mas à medida que fui desenvolvendo vi que o projeto já estava muito trabalhoso e por isso desisti. Sendo assim, ainda há resquícios no Redux da utilização deste.
+
+Não criei gráfico. Ele está mockado. Nunca usei nenhuma lib de gráfico, apesar de conhecer chats.js e d3.js.
+
+O desafio foi excelente para meu aprendizado. É o primeiro framework que tenho contato após o jQuery.
+
+Agradeço muito pela oportunidade!
+
+Isis Fraga - carioca em BH :)
+(21) 98138-0003
+
  
 # Getting Started with Create React App
 
