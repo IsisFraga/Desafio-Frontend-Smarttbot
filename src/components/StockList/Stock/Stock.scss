@@ -11,7 +11,8 @@ $halfMargin: 2px;
   border: 0px;
   box-shadow: 3px 3px 2px 1px #e8e3ee;
   justify-content: space-between;
-  min-width: 665px;
+  min-width: 600px;
+  flex-grow: 1;
 
   @include desktop {
     padding: 25px;
@@ -191,7 +192,8 @@ $halfMargin: 2px;
   &__right {
     display: flex;
     flex-direction: column;
-    width: 380px;
+    flex-grow: 1;
+    max-width: 380px;
     justify-content: space-between;
 
     &--header {
@@ -221,7 +223,7 @@ $halfMargin: 2px;
       align-items: flex-end;
 
       img {
-        width: 380px;
+        width: 100%
       }
     }
     .pause,
