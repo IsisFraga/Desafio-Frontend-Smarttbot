@@ -1,28 +1,28 @@
 import './Sidebar.scss';
 
 import React, { useEffect, useState } from 'react';
-
-import StockData from '../../services/StockData'
-import logo from '../../assets/logoSmarttbot.png'
+import logo from '../../assets/iconSmarttbot.png'
+import logoExp from '../../assets/smarttbotCompleto.png'
+import signal from '../../assets/signal.png'
 
 function Sidebar(props) {
-  // tudo que seu componente vai apresentar de informação
-  // que não é fixa, ou seja que pode vir de api
-  const [dog, setDog] = useState();
 
-  // tudo que seu componente executa de função só uma vez. ou seja, no inicio dele
-  // no inicio
-  useEffect(() => {
-    teste()
-  }, []);
+const [open, setOpen] = useState(false)
 
-  // função que ele precisa
-  async function teste() {
-  }
 
   return (
-    <div className="Sidebar">
-      <img src={logo} alt="" />
+    <div className={`Sidebar ${open ? 'open' : ''}`}>
+      <div className="container" onClick={() => setOpen(!open) }>
+        <img className="smart" src={logo} alt="logo da Smarttbot" />
+        <img className="hide" src={logoExp} alt="logo da Smarttbot" />
+        <div className="line">
+
+        </div>
+        <div>
+          <img className="signal" src={signal} alt="barras verdes" />
+          <span className="toHide">Análise geral</span>
+        </div>
+      </div>
     </div>
   );
 }

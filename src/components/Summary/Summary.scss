@@ -1,8 +1,11 @@
 @import '../../styles/global.scss';
 
 .nosummary {
+    min-width: 680px;
     opacity: 0;
     position: relative;
+    height: 0;
+
     &.simulated {
         opacity: 1;
     }
@@ -14,6 +17,7 @@
     }
 }
 .summary {
+    min-width: 680px;
     &.simulated {
         *{
             opacity: 0;

@@ -47,11 +47,11 @@ function App() {
         <Sidebar/>
       </div>
       <div className="contentArea">
-      <Header self={self} changeSelf={() => setSelf(!self)}/>
-      <Summary real={self}/>
-      <AddRobot robot="props" newRobot={() => addRobots()}
-      availableRobots={availableRobots} />
-      <StockList numberOfRobots={numberOfRobots}/>
+        <Header self={self} changeSelf={() => setSelf(!self)}/>
+        <Summary real={self}/>
+        <AddRobot robot="props" newRobot={() => addRobots()}
+        availableRobots={availableRobots} />
+        <StockList numberOfRobots={numberOfRobots}/>
       </div>
     </div>
   );

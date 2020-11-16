@@ -1,6 +1,107 @@
+@import '../../styles/global.scss';
+
 .Sidebar {
- img {
-  width: 50px;
-  height: 50px;
- }
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+
+    @include desktop {
+        width: 70px;
+        margin: 10px 20px;
+        margin-right: 0;
+    }
+    &.open {
+        @include desktop {
+            .container {
+                width: 240px;
+                z-index: 1;
+                align-items: flex-start;
+
+                .line {
+                    width: 100%;
+                }
+
+                .smart {
+                    display: none;
+                }
+
+                .hide {
+                    display: block;
+                    height: 28.5px;
+                    position: relative;
+                    left: -6px;
+                    top: 0.5px;
+                }
+                span {
+                    font-size: 15px;
+                    letter-spacing: 0.5px;
+                    color: $description_text;
+                    font-weight: 300;
+                    display: inline-block;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 6px;
+        border: 0px;
+        box-shadow: 3px 3px 2px 1px #e8e3ee;
+        padding-left: 30px;
+        flex-direction: column;
+        text-align: left;
+        color: $gray_dark;
+        font-size: 13px;
+        font-weight: 400;
+
+        span {
+            font-size: 0;
+        }
+    
+        @include desktop {
+            padding: 25px;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-start;
+            .line {
+                width: 40px;
+                border-top: 1px solid $gray3;
+                margin: 25px 0;
+            }
+           
+        }
+        @include mobile {
+            padding: 15px;
+            width: 100%;
+            margin: 20px 10px 15px 10px;
+            flex-direction: row;
+            justify-content: space-between;
+            min-width: 680px;
+    
+            .line {
+                height: 40px;
+                border-left: 1px solid $gray3;
+            }
+        }
+    
+     .smart {
+      width: 35px;
+      display: block;
+     }
+     .signal {
+         width: 20px;
+     }
+
+     .hide {
+         display: none;
+     }
+}
+
+
 }

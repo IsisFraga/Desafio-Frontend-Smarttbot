@@ -9,7 +9,7 @@
     border: 0px;
     box-shadow: 3px 3px 2px 1px #e8e3ee;
     justify-content: space-between;
-
+    min-width: 680px;
     @include desktop {
         padding: 25px;
         width: calc(100% - 54px);

@@ -14,13 +14,16 @@
   @include desktop {
     width: calc(100% - 54px);
     margin: 10px 27px;
-    >div:nth-child(2n) {
-      margin-left: 20px;
-    }
+  
   }
   @include mobile {
       width: 100%;
       margin: 10px;
   }
- 
+
+  @media screen and (min-width: 1500px) {
+    >div:nth-child(2n) {
+      margin-left: 20px;
+    }
+  }
 }
