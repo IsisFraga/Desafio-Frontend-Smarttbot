@@ -1,5 +1,4 @@
 import './AddRobot.scss';
-import React, { useEffect, useState } from 'react';
 import addrobot from '../../assets/add robot.png';
 
 function AddRobot (props) {
@@ -7,7 +6,7 @@ function AddRobot (props) {
     return (
         <div className="newRobot">
             <div className="newRobot__left">
-                <img src={addrobot} onClick={() => props.newRobot()}></img>
+                <img src={addrobot} alt="robot" onClick={() => props.newRobot()}/>
                 <div className="mainText">
                     <h3>
                         Adicionar novo Robô
