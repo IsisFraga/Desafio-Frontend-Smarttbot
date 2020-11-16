@@ -1,6 +1,6 @@
 import './Sidebar.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/iconSmarttbot.png'
 import logoExp from '../../assets/smarttbotCompleto.png'
 import signal from '../../assets/signal.png'
