@@ -11,6 +11,8 @@ Não criei gráfico. Ele está mockado. Nunca usei nenhuma lib de gráfico, apes
 
 O desafio foi excelente para meu aprendizado. É o primeiro framework que tenho contato após o jQuery.
 
+Você pode acessar o projeto pronto através deste link: https://desafio-smarttbot-isis-fraga.netlify.app/
+
 Agradeço muito pela oportunidade!
 
 Isis Fraga - carioca em BH :)
