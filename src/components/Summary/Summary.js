@@ -46,8 +46,7 @@ function Summary (props) {
 
     useEffect(() => {
         getData()
-        console.log('teste', reduxState);
-    }, [reduxState]) 
+    }, [reduxState, getData]) 
 
     return (
         <>
